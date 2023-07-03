@@ -1,0 +1,15 @@
+{
+    "lock": false,
+    "imports": {
+        "@vkno/errantly": "./@vkno/errantly/source/index.mts",
+        "@vkno/fsext": "./@vkno/fsext/source/index.mts",
+        "@vkno/typed": "./@vkno/typed/source/index.mts",
+        "deps": "./deps.mts",
+        "dev_deps": "./dev_deps.mts"
+    },
+    "test": {
+        "include": [
+            "**/source/**/*.spec.mts"
+        ]
+    }
+}

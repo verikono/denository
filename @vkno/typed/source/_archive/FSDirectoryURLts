@@ -1,0 +1,13 @@
+import {
+    type FSURL
+} from '@vkno/typed';
+
+
+
+/**
+ * @type FSDirectoryURL
+ * @description a filesystem URL which resolves to a directory
+ * @satisfies URL
+ */
+export declare type FSDirectoryURL = FSURL & { __entryType: 'directory'; }
+
