@@ -5,6 +5,7 @@ import {
 	type FSGuardOptions,
 	// type FSPath,
 	// type FSPathType,
+	fsEntryExistsSync,
 	fsGuardDefaults,
 	isFSURL,
 	isFSPath,
@@ -65,7 +66,7 @@ export function isFSUrlSpec<ET extends FSEntryType = 'entry'>(value:unknown, opt
 	if(typeof value === 'string') {
 		if(rxFSUrlSpec.test(value)) {
 			if(!isFile && !isDirectory || isFile && rxFSFileUrlSpec.test(value) || isDirectory && rxFSDirectoryUrlSpec.test(value)){
-				if(!verify || fsEntryExists(value)) {
+				if(!verify || fsEntryExistsSync(value as FSUrlSpec<ET>)) {
 					return true;
 				}
 				return guardError(`${isFile ? 'file' : 'directory'} ${value} does not exist`, options);

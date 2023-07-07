@@ -9,10 +9,10 @@ import {
 } from '@vkno/typed';
 
 import {
+	raiseError,
 	GuardError,
 	NotImplementedError
 } from '@vkno/errantly';
-import { raiseError } from '../../../../errantly/source/errors/raiseError.mts';
 
 
 
@@ -65,7 +65,7 @@ export const rxRelativeFSPath = /^\..+$/;
 /**
  * 
  */
-export const rxFSPath = /^\.|\/.+$/;
+export const rxFSPath = /^\.|\/[^<>:"?*]+$/;
 
 
 /**
@@ -97,6 +97,5 @@ export function isFSPath<ET extends FSEntryType = 'entry', PT extends FSPathType
 export function toFSPath<ET extends FSEntryType = 'entry', PT extends 'absolute' = 'absolute'>(value: FSEntry<ET,PT>): FSPath<ET, PT> {
 	if(isFSURL<ET>(value)) return value.pathname as FSPath<ET, 'absolute'>;
 	if(isFSUrlSpec<ET>(value)) return new URL(value).pathname as FSPath<ET, 'absolute'>;
-	throw new TypeError('')
-	throw new NotImplementedError();
+	throw new TypeError('argued source is not a URL instance, filesystem URL spec, or a filesystem path');
 }

@@ -22,7 +22,7 @@ function isError( value: unknown ): value is Error {
  * @param classType 
  * @param props 
  */
-export function assertThrowsProps( fn: (...args:unknown[]) => unknown, classType: SubClass<Error>, props: Record<Key, unknown> ): void {
+export function assertThrowsProps(fn:(...args:unknown[]) => unknown, classType:SubClass<Error>, props:Record<Key, unknown> ): void {
     try{ fn() }
     catch(e: unknown) {
         if(isError(e)) {

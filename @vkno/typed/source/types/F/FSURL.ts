@@ -14,6 +14,7 @@ import {
 	guardError,
 	NotImplementedError,
 } from '@vkno/errantly';
+import { ArgumentError } from '../../../../errantly/source/errors/ArgumentError.mts';
 
 
 /**
@@ -29,14 +30,12 @@ export declare type FSDirectoryURL = FSURL<'directory'>;
  * 
  * @param fse 
  */
-export function toFSURL<ET extends FSEntryType = 'entry'>(fse: FSPath<ET>): FSURL<ET> {
-	if(isFSURL<ET>(fse)) return fse;
-	if(isFSUrlSpec<ET>(fse)) return new URL(fse) as FSURL<ET>;
-	if(isFSPath<ET, 'absolute'>(fse))
-	throw new NotImplementedError();
+export function toFSURL<ET extends FSEntryType = 'entry'>(source: FSPath<ET>): FSURL<ET> {
+	if(isFSURL<ET>(source)) return source;
+	if(isFSUrlSpec<ET>(source)) return new URL(source) as FSURL<ET>;
+	if(isFSPath<ET, 'absolute'>(source)) return new URL(`file://${source}`) as FSURL<ET>;
+	throw new ArgumentError(`source` as any, `not a filesystem URL, UrlSpec or path`);
 }
-
-
 
 
 export function isFSURL<ET extends FSEntryType = 'entry'>(value: unknown, options:FSGuardOptions = { type: 'FSURL' }):value is FSURL<ET> {

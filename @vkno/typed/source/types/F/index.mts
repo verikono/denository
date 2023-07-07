@@ -4,10 +4,10 @@ export {
     type FSEntryTypeBrand,
     isFSEntry,
     processFSGuardOptionsSync,
-    fseIsReadableSync,
-    fseIsWriteableSync,
-    fseIsExecutableSync,
-    existsSync,
+    fsEntryExistsSync,
+    fsEntryIsReadableSync,
+    fsEntryIsWriteableSync,
+    fsEntryIsExecutableSync
 } from './FSEntry.ts';
 
 export type {

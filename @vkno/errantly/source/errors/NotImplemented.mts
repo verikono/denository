@@ -1,7 +1,8 @@
-import {
+import { ErrorBase } from './ErrorBase.mts';
+
+import { 
 	type Errant,
-	ErrorBase
-} from '@vkno/errantly';
+} from './types/Errant.mts';
 
 
 /**
@@ -17,7 +18,5 @@ export class NotImplementedError extends ErrorBase implements Errant {
 	public constructor(message:string = 'no message provided') {
 		super(message);
 	}
-
-
 
 }

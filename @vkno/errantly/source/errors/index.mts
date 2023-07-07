@@ -3,6 +3,10 @@ export {
 } from './types/Errant.mts';
 
 export {
+    ArgumentError
+} from './ArgumentError.mts';
+
+export {
     ErrorBase
 } from './ErrorBase.mts';
 

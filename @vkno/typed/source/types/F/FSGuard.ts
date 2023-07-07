@@ -1,9 +1,9 @@
 import {
 	type PartialWith,
-	type TypeGuard,
-	typeGuardDefaults
+	type TypeGuard
 } from '@vkno/typed';
 
+import { typeGuardDefaults } from '../T/TypeGuard.ts';
 
 /**
  * @type FSGuard

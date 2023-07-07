@@ -1,6 +1,9 @@
 {
     "name": "denository",
     "version": "0.0.1",
+    "scripts": {
+        "test": "vitest"
+    },
     "dependencies": {
         "@vkno/typed": "*",
         "@vkno/errantly": "*",
@@ -8,7 +11,9 @@
     },
     "devDependencies": {
         "@types/node": "^20.3.3",
-        "typescript": "^5.1.6"
+        "typescript": "^5.1.6",
+        "vitest": "^0.32.4",
+        "vite": "^4.3.9"
     },
     "workspaces": [
         "@vkno/*"

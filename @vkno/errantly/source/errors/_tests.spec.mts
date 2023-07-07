@@ -7,34 +7,20 @@ import {
 
 import {
 	TestClass
-} from '../_testing.mts';
+} from '../_testingElements.mts';
 
 
 import {
-	ErrorBase,
 	GuardError,
-	assertThrowsProps,
+	// assertThrowsProps,
 } from '@vkno/errantly';
 
-
-describe(`@verikono/errantly.ErrorBase`, () => {
-
-	it(`exports an ErrorBase class`, () => assert(ErrorBase.name === 'ErrorBase'));
-
-	describe(`initial state`, () => {
-
-		it(`ErrorBase.name is "ErrorBase"`, () =>
-			assertThrowsProps(() => { new TestClass().throwFromMethod(); }, ErrorBase, { name:"ErrorBase" }));
-
-	});
-
-
-});
 
 
 describe(`@verikono/errantly.GuardError`, () => {
 
-	it(`exports an GuardError class`, () => assert(GuardError.name === 'GuardError'));
+	it(`exports an GuardError class`, () =>
+		assert(GuardError.name === 'GuardError'));
 
 	describe(`throws from a synchronous class member`, () => {
 

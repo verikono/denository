@@ -4,7 +4,7 @@ import {
     type FSEntry,
     type FSEntryName,
     type FSEntryType,
-    // type FSPath,
+    type FSPath,
     type FSURL,
     isFSPath,
     toFSPath,
@@ -21,7 +21,7 @@ export declare type findAboveParams = {
 
 export declare type findAboveOptions = Partial<findAboveParams>;
 
-export async function findAbove<T extends FSEntryType = 'entry'>(name: FSEntryName, options: findAboveOptions = {}):Promise<FSURL<T>> {
+export async function findAbove<ET extends FSEntryType = 'entry'>(name: FSEntryName, options: findAboveOptions = {}):Promise<FSURL<ET>> {
     const rootPath = '/';
     const dirSep = '/';
     const { cwd:fse } = Object.assign({}, findAboveDefaults, options);
@@ -29,9 +29,10 @@ export async function findAbove<T extends FSEntryType = 'entry'>(name: FSEntryNa
     if(isFSPath(searchPath, { verify: true })) {
         const pathParts = searchPath.split(dirSep);
         while(pathParts.length) {
-            const testPath = [rootPath, ...pathParts, name].join(dirSep);
+            const testPath = [rootPath, ...pathParts, name].join(dirSep) as FSPath<'entry', 'absolute'>;
             if(isFSPath(testPath, { verify: true })) {
-                return toFSURL<T>(testPath);
+                const result = toFSURL<ET>(testPath as FSPath<ET>);
+                return result;
             }
             pathParts.pop();
         }
@@ -39,6 +40,7 @@ export async function findAbove<T extends FSEntryType = 'entry'>(name: FSEntryNa
     }
     throw new NotImplementedError();
 }
+
 
 export function findAboveSync(name:FSEntryName): URL {
     throw new NotImplementedError();

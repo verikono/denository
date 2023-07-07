@@ -1,6 +1,5 @@
 import {
-    type Errant,
-    ErrorBase
+    type Errant
 } from '@vkno/errantly';
 
 import {
@@ -8,8 +7,14 @@ import {
 } from '@vkno/typed';
 
 
+import {
+    ErrorBase
+} from './ErrorBase.mts';
+
 export class ArgumentError extends ErrorBase implements Errant {
     name = 'ArgumentError';
     explanation = 'thrown when an argument was an unexpected in some form.';
-    constructor( argname: ArgumentName ):
+    constructor( argument: ArgumentName, reason: string ) {
+        super(`argument ${argument} has produced an error - ${reason}`)
+    }
 }

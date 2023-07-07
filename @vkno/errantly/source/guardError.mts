@@ -18,7 +18,7 @@ export type guardErrorOptions = {
  * @param {raise:boolean} options when optioned true a guard error is thrown 
  * @returns {never|false}
  */
-export function guardError(message:string, options: guardErrorOptions): never|false {
+export function guardError(message:string, options:guardErrorOptions): never|false {
     if(options.raise) {
         throw new GuardError(options.type, message);
     }

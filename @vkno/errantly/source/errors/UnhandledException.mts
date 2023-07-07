@@ -1,7 +1,8 @@
-import {
-    type Errant,
-    ErrorBase,
-} from '@vkno/errantly';
+import { ErrorBase } from './ErrorBase.mts';
+
+import { 
+	type Errant,
+} from './types/Errant.mts';
 
 
 export class UnhandledException extends ErrorBase implements Errant {

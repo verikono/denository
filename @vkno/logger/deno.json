@@ -1,8 +1,5 @@
 {
 	"lock": false,
-	"compilerOptions": {
-		"experimentalDecorators": false
-	},
 	"fmt": {
 		"useTabs": true,
 		"singleQuote": true

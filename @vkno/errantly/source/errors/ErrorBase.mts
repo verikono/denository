@@ -25,7 +25,7 @@ export class ErrorBase extends Error {
 	line: number;
 	column: number;
 
-	constructor(message?: string) {
+	constructor(message: string = 'no message provided.') {
 		super(message);
 		Object.setPrototypeOf(this, ErrorBase.prototype);
 		this.message = message || 'no message provided';

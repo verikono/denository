@@ -1,8 +1,4 @@
-import {
-    describe,
-    expect,
-    it,
-} from "dev_deps";
+import { describe, it, expect } from 'dev_deps';
 
 import {
     findAbove,

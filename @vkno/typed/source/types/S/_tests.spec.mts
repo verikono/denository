@@ -2,7 +2,7 @@ import {
     describe,
     it,
     expect,
-} from 'dev_deps';
+} from 'vitest';
 
 // import {
 //     type Specifier

@@ -1,7 +1,8 @@
+import { ErrorBase } from './ErrorBase.mts';
+
 import { 
 	type Errant,
-	ErrorBase
-} from '@vkno/errantly';
+} from './types/Errant.mts';
 
 
 /**

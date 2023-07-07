@@ -11,7 +11,7 @@ import {
 
 import {
     TestClass
-} from '../_testing.mts';
+} from '../_testingElements.mts';
 
 
 describe(`@verikono/errantly.assertions.assertThrowsProps`, () => {
@@ -20,7 +20,7 @@ describe(`@verikono/errantly.assertions.assertThrowsProps`, () => {
         expect(assertThrowsProps).toBeTypeOf('function'));
 
     it(`asserts ErrorBase has a name prop present when thrown`, () => {
-        assertThrowsProps(() => { new TestClass().throwFromMethod() }, ErrorBase, { name: 'ErrorBase' });
+        assertThrowsProps(() => { new TestClass().throwFromMethod() }, ErrorBase, { name: 'TestError' });
     });
 
     it(`asserts ErrorBase has a className prop present when thrown`, () => {

@@ -1,35 +1,16 @@
-import {
-	ErrorBase,
-	GuardError,
-	NotImplementedError
-} from '@vkno/errantly';
+import { describe, it, expect } from 'dev_deps';
 
+import { TestClass } from './_testingElements.mts';
 
-export class TestError extends ErrorBase {
-}
+describe(`@vkno/errantly`, () => {
 
-export class TestGuardError extends GuardError {
+	describe(`throwing from class methods`, () => {
 
-}
+		it(`throws from a class method`, () => {
 
+			expect(new TestClass().throwFromMethod()).toThrow();
+		});
 
-export class TestClass {
+	});
 
-	throwFromMethod(): never {
-		throw new TestError('thrown-from-method');
-	}
-
-	async throwFromAsyncMethod(): Promise<never> {
-		await new Promise((r) => r(true));
-		throw new TestError(`thrown-from-async-method`);
-	}
-
-	throwGuardError(message?: string): never {
-		throw new GuardError(message);
-	}
-
-	throwNotImplementedError(message?: string): never {
-		throw new NotImplementedError(message);
-	}
-
-}
+});
