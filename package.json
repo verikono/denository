@@ -1,21 +1,17 @@
 {
-    "name": "denository",
-    "version": "0.0.1",
-    "scripts": {
-        "test": "vitest"
-    },
+    "name": "@vkno/denository",
+    "type": "module",
+    "verison": "0.0.1",
     "dependencies": {
-        "@vkno/typed": "*",
-        "@vkno/errantly": "*",
-        "@vkno/fsext": "*"
+        "@napi-rs/cli": "^2.16.1"
     },
     "devDependencies": {
         "@types/node": "^20.3.3",
         "typescript": "^5.1.6",
-        "vitest": "^0.32.4",
-        "vite": "^4.3.9"
+        "vite": "^4.4.2",
+        "vitest": "^0.33.0"
     },
     "workspaces": [
-        "@vkno/*"
+        "vkno/*"
     ]
 }
