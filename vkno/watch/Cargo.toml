@@ -1,9 +1,0 @@
-[package]
-name = "@vkno/watch"
-version = "0.0.1"
-documentation = "https://github.com/verikono/denository/@vkno/watch/README.md"
-license = "MIT"
-repository = "https://github.com/verikono/denository"
-
-[build-dependencies]
-napi-build = "2.0.1"

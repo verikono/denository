@@ -1,5 +1,0 @@
-===========
-@vkno/fsext
-===========
-
-filesystem helpers.

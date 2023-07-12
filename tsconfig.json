@@ -6,7 +6,8 @@
         "noEmit": true,
         "strict": true,
         "allowImportingTsExtensions": true,
-        "noFallthroughCasesInSwitch": true
+        "noFallthroughCasesInSwitch": true,
+        "sourceMap": true
     },
-    "include": [ "./vkno/**/*" ]
+    "include": [ "./@vkno/**/*" ]
 }

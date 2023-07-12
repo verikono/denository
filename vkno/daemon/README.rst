@@ -1,6 +1,0 @@
-==============
-@vkno/errantly
-==============
-
-Extended Errors
-

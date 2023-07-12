@@ -1,0 +1,22 @@
+{
+	"lock": false,
+	"compilerOptions": {
+		"experimentalDecorators": false
+	},
+	"fmt": {
+		"useTabs": true,
+		"singleQuote": true
+	},
+	"test": {
+		"include": [
+			"./source/**/*.spec.mts"
+		]
+	},
+	"lint": {
+		"rules": {
+			"tags": [
+				"ban-unused-ignore"
+			]
+		}
+	}
+}
