@@ -4,7 +4,7 @@
     "type": "module",
     "description": "A simple file watcher",
     "scripts": {
-        "build": "napi build --platform --release vkno-watch"
+        "build": "napi build --platform --release"
     },
     "devDependencies": {
         "@napi-rs/cli": "^2.16.1"

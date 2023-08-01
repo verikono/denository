@@ -1,0 +1,25 @@
+{
+    "name": "@vkno/xurl",
+    "version": "1.0.0",
+    "type": "module",
+    "description": "extended URL functionality",
+    "scripts": {
+        "test": "vitest"
+    },
+    "devDependencies": {
+        "@types/node": "^20.3.3",
+        "typescript": "^5.1.6",
+        "vite": "^4.4.2",
+        "vitest": "^0.33.0"
+    },
+    "exports": {
+        ".": {
+            "types": "./src/index.mts",
+            "import": {
+                "types": "./src/index.mts",
+                "default": "./src/index.mts"
+            }
+        }
+    }
+}
+    

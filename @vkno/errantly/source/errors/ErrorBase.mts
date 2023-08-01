@@ -78,4 +78,5 @@ export class ErrorBase extends Error {
 			tail
 		].join('\n');
 	}
+
 }
